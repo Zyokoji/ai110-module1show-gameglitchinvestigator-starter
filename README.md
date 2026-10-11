@@ -33,11 +33,17 @@ It wrote the code, ran away, and now the game is unplayable.
 
 Describe your fixed game in numbered steps so a reader can follow along without watching a video:
 
-1. <!-- Describe this step -->
-2. <!-- Describe this step -->
-3. <!-- Describe this step -->
-4. <!-- Describe this step -->
-5. <!-- Add more steps as needed -->
+1.Start the game on Normal difficulty with 8 attempts.
+
+2.Enter 1, and the game displays "Go HIGHER!".
+
+3.Enter 2 and 4, and the game continues giving correct hints.
+
+4.Enter 83, matching the secret number.
+
+5.The game displays "Correct!" and celebrates with balloons.
+
+6.The game ends with a final score of 70 after 4 attempts.
 
 **Screenshot** *(optional)*: <!-- Insert a screenshot of your fixed, winning game here -->
 
@@ -47,6 +53,7 @@ Describe your fixed game in numbered steps so a reader can follow along without 
 # Paste your pytest output here, e.g.:
 # pytest tests/
 # ========================= X passed in 0.XXs =========================
+30 passed in 0.02s
 ```
 
 ## 🚀 Stretch Features
