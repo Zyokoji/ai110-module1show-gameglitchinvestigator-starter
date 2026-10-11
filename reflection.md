@@ -17,20 +17,26 @@ Document at least 3 bugs you found. Add rows as needed.
 | | | | |
 | | | | |
 | | | | |
+Guess Below Secret number| Display "go higher"| Displayed "Go Lower"| None 
+CLick New Game | Restart Game and Reset State | Game did not restart| Stayed as before no changes were made
+Correct guess of 86| End game and carculate Score | Game ended with score -20 | FInal Score -20
 
 ---
 
 ## 2. How did you use AI as a teammate?
 
 - Which AI tools did you use on this project (for example: ChatGPT, Gemini, Copilot)?
+Claude/Chatgpt
 - Give one example of an AI suggestion that was correct (including what the AI suggested and how you verified the result).
-- Give one example of an AI suggestion you did not accept as written (including what the AI suggested, why you rejected or changed it, and how you verified your version). It does not have to be a suggestion that was wrong: over-engineered, out of scope, harder to read, or a poor fit for this codebase all count.
+Claude identified that the high and low hints were reversed in the check_guess function
+- Give one example of an AI suggestion you did not accept as written (including what the AI suggested, why you rejected or changed it, and how you verified your version). It does not have to be a suggestion that was wrong: over-engineered, out of scope, harder to read, or a poor fit for this codebase all count. 
 
 ---
 
 ## 3. Debugging and testing your fixes
 
 - How did you decide whether a bug was really fixed?
+By running the game again and trying the same inputs that originally caused the problem
 - Describe at least one test you ran (manual or using pytest)  
   and what it showed you about your code.
 - Did AI help you design or understand any tests? How?
@@ -40,7 +46,7 @@ Document at least 3 bugs you found. Add rows as needed.
 ## 4. What did you learn about Streamlit and state?
 
 - How would you explain Streamlit "reruns" and session state to a friend who has never used Streamlit?
-
+Streamlit reruns the script when users interact with the app. Session state keeps information like scores, attempts, and the secret number between reruns.
 ---
 
 ## 5. Looking ahead: your developer habits
@@ -49,3 +55,8 @@ Document at least 3 bugs you found. Add rows as needed.
   - This could be a testing habit, a prompting strategy, or a way you used Git.
 - What is one thing you would do differently next time you work with AI on a coding task?
 - In one or two sentences, describe how this project changed the way you think about AI generated code.
+Habit: Test my code after changes and make regular Git commits.
+
+Next time: Fix one issue at a time instead of everything at once.
+
+What I learned: AI-generated code can have bugs, so I should always review and test it.
