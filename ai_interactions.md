@@ -26,11 +26,19 @@
 
 > Document how you used AI to help generate or improve tests.
 
+**Prompt used (Optional Challenge 1: Advanced Edge-Case Testing):**
+
+```
+I have completed the required Game Glitch Investigator project and now want to complete Optional Challenge 1: Advanced Edge-Case Testing. Review my existing code and pytest tests. Identify three meaningful edge cases not already covered, such as negative numbers, decimal inputs, and extremely large values. Add pytest cases verifying these inputs are handled gracefully without crashing or incorrectly updating the game state. Preserve all existing behavior and tests. Run the full pytest suite and report the actual results. Update ai_interactions.md with my prompt and a one-line explanation for each edge case. Do not modify README.md yet.
+```
+
+Tests are in `tests/test_edge_cases.py`.
+
 | Edge Case | Prompt Used | AI-Suggested Test | Did It Pass? | Your Reasoning |
 |-----------|-------------|-------------------|--------------|----------------|
-| | | | | |
-| | | | | |
-| | | | | |
+| Negative numbers (`-5`, `-0`, `-100`) | Challenge 1 prompt above | `test_negative_input_parses_to_negative_int`, `test_negative_guess_is_too_low_and_hints_higher`, `test_negative_guess_in_app_does_not_crash_or_end_game` | Yes | A negative guess is a valid number below every secret, so it should be parsed, called "Too Low" with a "Go HIGHER" hint, and never push the score below 0. |
+| Decimal inputs (`42.9`, `.5`, `-2.5`, `4.2.1`) | Challenge 1 prompt above | `test_decimal_input_truncates_toward_zero`, `test_malformed_decimal_is_rejected`, `test_decimal_that_truncates_to_secret_wins`, `test_malformed_decimal_in_app_leaves_score_and_status_unchanged` | Yes | Decimals are truncated toward zero (not rounded), and malformed decimals are rejected with an error instead of crashing or changing the score. |
+| Extremely large values (30-digit int, `1e400`, `1.5e400`, `inf`, `nan`, 5000 digits) | Challenge 1 prompt above | `test_huge_integer_parses_and_compares_without_overflow`, `test_overflowing_or_non_finite_input_is_rejected`, `test_rejected_input_never_changes_score`, `test_huge_value_in_app_does_not_crash_or_change_score` | Yes | Python ints never overflow, but `int(float("1.5e400"))` raises `OverflowError` and 5000-digit strings exceed Python's digit limit, so these must be caught and reported as "not a number". |
 
 ---
 
